@@ -6,7 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EFCore
 {
-    [ShortRunJob]
     [MediumRunJob]
     [KeepBenchmarkFiles]
     [HtmlExporter]
@@ -33,8 +32,8 @@ namespace EFCore
         [Benchmark]
         public async Task GetUsersAsync()
         {
-            var abc = await _context.Users.ToListAsync();
-            abc.Consume(consumer);
+            var users = await _context.Users.ToListAsync();
+            users.Consume(consumer);
         }
 
         [Benchmark]

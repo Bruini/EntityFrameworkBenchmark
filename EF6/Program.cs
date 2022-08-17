@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BenchmarkDotNet.Running;
+using System;
 
 namespace EF6
 {
@@ -10,6 +7,9 @@ namespace EF6
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Iniciando Benchmark");
+
+            var benchmark = BenchmarkRunner.Run<EF6Benchmark>();
         }
     }
 }
